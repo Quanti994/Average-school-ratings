@@ -14,7 +14,10 @@ class MainWindow : public QMainWindow
     Q_OBJECT
     QVector<RatingForm*>ratingForms;
     QVBoxLayout *boxLayout;
-    AverageRatings average;
+    AverageRatings *wAverage;
+    bool errorFlag;
+    void showMessage(QString text);
+    void checkValueLineText();
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
@@ -22,6 +25,7 @@ public:
 
 private slots:
     void on_quantityBox_valueChanged(int arg1);
+    void on_averageButton_clicked();
 
 private:
     Ui::MainWindow *ui;
