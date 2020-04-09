@@ -15,6 +15,7 @@ class MainWindow : public QMainWindow
     QVector<RatingForm*>ratingForms;
     QVBoxLayout *boxLayout;
     AverageRatings *wAverage;
+    QString message;
     bool errorFlag;
     void showMessage(QString text);
     void checkValueLineText();

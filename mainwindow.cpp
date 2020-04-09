@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->averageText->clear();
     errorFlag = false;
     wAverage = new AverageRatings();
+    message = "Nie wprowadzono wszystkich ocen lub wartosci sa niepoprawne!";
 }
 
 MainWindow::~MainWindow()
@@ -74,7 +75,7 @@ void MainWindow::checkValueLineText()
     {
         if(!ratingForms[i]->checkState())
         {
-            showMessage("Nie wprowadzono wszystkich ocen!");
+            showMessage(message);
             errorFlag = true;
             break;
         } else errorFlag = false;
